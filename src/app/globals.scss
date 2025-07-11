@@ -50,3 +50,13 @@ a {
     font-size: 93.75%; // 15px
   }
 }
+
+.loader{
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
