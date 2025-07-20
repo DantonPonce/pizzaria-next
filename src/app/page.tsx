@@ -5,6 +5,7 @@ import Image from "next/image";
 import { api } from "../services/api";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import { toast } from "sonner";
 
 export default function Page() {
   async function handleLogin(formData: FormData) {
@@ -14,7 +15,7 @@ export default function Page() {
     const password = formData.get("password");
 
     if (!email || !password) {
-      console.log("Preencha todos os campos");
+      toast.warning("Preencha todos os campos!");
       return;
     }
 
@@ -28,8 +29,6 @@ export default function Page() {
         return;
       }
 
-      console.log(response.data);
-
       const expressTime = 60 * 60 * 24 * 30 * 1000; // 30 dias em milissegundos
       const cookieStore = await cookies();
       cookieStore.set("session", response.data.token, {
@@ -38,8 +37,9 @@ export default function Page() {
         httpOnly: false,
         secure: process.env.NODE_ENV === "production",
       });
-    } catch (err) {
-      console.log("Erro ao fazer login: XXXX", err);
+    } catch (error) {
+      toast.warning("Erro ao fazer login!");
+      console.log(error);
       return;
     }
 

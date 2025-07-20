@@ -4,6 +4,7 @@ import logoImg from "/public/logo.svg";
 import Image from "next/image";
 import { api } from "../../services/api";
 import { redirect } from "next/navigation";
+import { toast } from "sonner";
 
 export default function signup() {
   async function handleRegister(formData: FormData) {
@@ -14,7 +15,7 @@ export default function signup() {
     const password = formData.get("password");
 
     if (!name || !email || !password) {
-      console.log("Preencha todos os campos");
+      toast.warning("Preencha todos os campos!");
       return;
     }
 
@@ -25,7 +26,8 @@ export default function signup() {
         password,
       });
     } catch (error) {
-      console.log("Erro ao cadastrar usuário:", error);
+      toast.warning("Erro ao cadastrar usuário!");
+      console.log(error);
     }
 
     redirect("/");
