@@ -28,6 +28,10 @@
     flex-direction: column;
     gap: 16px;
 
+    .emptyItem {
+      color: var(--gray-100);
+    }
+
     .tag {
       width: 9px;
       height: 60px;
