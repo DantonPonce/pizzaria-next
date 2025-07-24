@@ -39,7 +39,7 @@ export function Form({ categories }: Props) {
     const request = new FormData();
 
     request.append("name", name);
-    request.append("price", name);
+    request.append("price", price);
     request.append("description", description);
     request.append(
       "category_id",
