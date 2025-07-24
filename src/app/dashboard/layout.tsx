@@ -1,3 +1,4 @@
+import { OrderProvider } from "@/providers/order";
 import { Header } from "./components/header";
 
 export default function DashboardLayout({
@@ -8,7 +9,9 @@ export default function DashboardLayout({
   return (
     <>
       <Header />
-      {children}
+      <OrderProvider>
+        {children}
+      </OrderProvider>
     </>
   );
 }

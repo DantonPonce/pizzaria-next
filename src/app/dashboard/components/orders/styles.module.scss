@@ -31,14 +31,14 @@
     .tag {
       width: 9px;
       height: 60px;
-      background: var(--green-900);
+      background-color: var(--green-900);
       border-radius: 6px 0 0 6px;
       margin-right: 16px;
     }
 
     .orderItem {
       display: flex;
-      background: var(--dark-900);
+      background-color: var(--dark-900);
       align-items: center;
       border: 0;
       font-size: 18px;

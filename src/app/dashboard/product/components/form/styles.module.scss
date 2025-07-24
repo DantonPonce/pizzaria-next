@@ -19,7 +19,7 @@
             width: 100%;
             height: 280px;
             position: relative;
-            background: var(--dark-900);
+            background-color: var(--dark-900);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -50,7 +50,7 @@
             width: 100%;
             height: 40px;
             border-radius: 8px;
-            background: var(---dark-900);
+            background-color: var(---dark-900);
             color: var(--white);
             padding: 0 8px;
             border: 1px solid var(--gray-100);
@@ -60,7 +60,7 @@
         .input{
             border: 0;
             height: 40px;
-            background: var(--dark-900);
+            background-color: var(--dark-900);
             color: var(--white);
             border-radius: 8px;
             padding: 0 8px;
